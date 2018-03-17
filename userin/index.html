@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Educthru</title>
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB6I9gYFHBXkLk_WTtS8XjIW1vcKMoZBO0",
+    authDomain: "me-web-eb793.firebaseapp.com",
+    databaseURL: "https://me-web-eb793.firebaseio.com",
+    projectId: "me-web-eb793",
+    storageBucket: "me-web-eb793.appspot.com",
+    messagingSenderId: "575737289083"
+  };
+  firebase.initializeApp(config);
+</script>
+    <!-- *******************************************************************************************
+       * TODO(DEVELOPER): Paste the initialization snippet from:
+       * Firebase Console > Overview > Add Firebase to your web app. *
+       ***************************************************************************************** -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'http://192.168.0.100/education/',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <h1><center>Sign in to EDUCTHRU with Multiple options</center></h1>
+	<br>
+	<br>
+    <div id="firebaseui-auth-container"></div>
+  </body>
+</html>
